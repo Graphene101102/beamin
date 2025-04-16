@@ -2,7 +2,7 @@
 // app/admin/grades/page.tsx
 'use client';
 import { useState } from 'react';
-import GradeModal from '@/app/components/grades/GradeModal';
+import GradeModal from '@/app/components/admin/grades/GradeModal';
 import Link from 'next/link';
 import BackButton from '@/app/components/common/BackButton';
 

@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
 import { useParams } from 'next/navigation';
-import StudentModal from '@/app/components/students/StudentModal';
+import StudentModal from '@/app/components/admin/students/StudentModal';
 import BackButton from '@/app/components/common/BackButton';
 
 interface Student {

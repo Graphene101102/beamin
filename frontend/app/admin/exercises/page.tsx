@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
 import BackButton from '@/app/components/common/BackButton';
-import ExerciseModal from '@/app/components/exercises/ExerciseModal';
+import ExerciseModal from '@/app/components/admin/exercises/ExerciseModal';
 
 interface Exercise {
   id: number;

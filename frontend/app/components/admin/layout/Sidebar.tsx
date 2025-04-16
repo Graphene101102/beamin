@@ -6,7 +6,7 @@ export default function Sidebar() {
     <div className="w-64 min-h-screen bg-white border-r shadow-sm">
       <div className="flex flex-col h-full">
         <div className="p-4">
-          <Link href="/" className="block">
+          <Link href="/admin" className="block">
             <Image
               src="/image/logo.svg"
               alt="Logo"

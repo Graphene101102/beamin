@@ -1,6 +1,6 @@
 'use client';
 import { useState } from 'react';
-import ClassModal from '@/app/components/classes/ClassModal';
+import ClassModal from '@/app/components/admin/classes/ClassModal';
 import { useParams } from 'next/navigation';
 import Link from 'next/link';
 import BackButton from '@/app/components/common/BackButton';

@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
 import BackButton from '@/app/components/common/BackButton';
-import LessonModal from '@/app/components/lessons/LessonModal';
+import LessonModal from '@/app/components/admin/lessons/LessonModal';
 
 interface Lesson {
   id: number;

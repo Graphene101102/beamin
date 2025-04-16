@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
 import BackButton from '@/app/components/common/BackButton';
-import DocumentModal from '@/app/components/documents/DocumentModal';
+import DocumentModal from '@/app/components/admin/documents/DocumentModal';
 
 interface Document {
   id: number;
