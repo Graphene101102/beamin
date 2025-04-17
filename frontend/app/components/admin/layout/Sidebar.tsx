@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { BellIcon } from '@heroicons/react/24/outline';
 
 export default function Sidebar() {
   return (
@@ -54,7 +55,37 @@ export default function Sidebar() {
             <span className="mr-3">📄</span>
             <span className="font-medium">Quản lý tài liệu</span>
           </Link>
+          {/* Thống kê */}
+          <Link 
+            href="/admin/statistics" 
+            className="flex items-center p-3 rounded-lg hover:bg-gray-100 transition-colors duration-200 antialiased"
+          >
+            <span className="mr-3">📊</span>  
+            <span className="font-medium">Thống kê</span>
+          </Link>
+          
         </nav>
+
+         <div className="flex items-center gap-4 p-4">
+            <button className="p-2 hover:bg-gray-100 rounded-full">
+              <BellIcon className="w-6 h-6 text-gray-600" />
+            </button>
+            <div className="flex items-center gap-3">
+              <div className="flex flex-col items-end">
+                <span className="text-sm font-medium text-gray-700">Việt</span>
+                <span className="text-xs text-gray-500">Viet@gmail.com</span>
+              </div>
+              <div className="w-10 h-10 rounded-full bg-blue-100 overflow-hidden">
+                <Image
+                  src="/image/student.png"
+                  alt="Student avatar"
+                  width={40}
+                  height={40}
+                />
+              </div>
+            </div>
+          </div>
+
       </div>
     </div>
   );

@@ -1,31 +1,66 @@
+'use client';
+
+import { PlayCircleIcon } from '@heroicons/react/24/outline';
+import Link from 'next/link';
 import Image from 'next/image';
 
 export default function StudentHomePage() {
+  const lessons = [
+    {
+      id: "1",
+      title: "Bài 1 : CÂU CHUYỆN CỦA LỊCH SỬ",
+      description: "Tìm hiểu về lịch sử và các câu chuyện thú vị",
+      duration: "15 phút"
+    },
+    {
+      id: "2",
+      title: "Bài 2 : VẺ ĐẸP CỔ ĐIỂN",
+      description: "Khám phá vẻ đẹp của nghệ thuật cổ điển",
+      duration: "20 phút"
+    },
+    {
+      id: "3",
+      title: "Bài 3 : LỜI SÔNG NÚI",
+      description: "Tìm hiểu về văn hóa và thiên nhiên",
+      duration: "25 phút"
+    },
+    {
+      id: "4",
+      title: "Bài 4 : TIẾNG CƯỜI TRÀO PHÚNG TRONG THƠ",
+      description: "Khám phá nghệ thuật trào phúng trong thơ ca",
+      duration: "30 phút"
+    },
+    {
+      id: "5",
+      title: "Bài 5 : NHỮNG CÂU CHUYỆN HÀI",
+      description: "Học về nghệ thuật kể chuyện hài hước",
+      duration: "35 phút"
+    }
+  ];
+
   return (
     <div className="flex flex-col space-y-8">
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         {/* Main Content */}
         <div className="lg:col-span-2 space-y-8">
-
+          <h1 className="text-3xl font-bold text-gray-900 mb-8">Khóa học Văn học</h1>
 
           {/* Course Content */}
           <div className="bg-pink-50 rounded-lg shadow p-6">
             <h2 className="text-xl font-semibold text-gray-700 mb-4">Nội dung khóa học</h2>
             <div className="space-y-3">
-              {[
-                "Bài 1 : CÂU CHUYỆN CỦA LỊCH SỬ",
-                "Bài 2 : VẺ ĐẸP CỔ ĐIỂN",
-                "Bài 3 : LỜI SÔNG NÚI",
-                "Bài 4 : TIẾNG CƯỜI TRÀO PHÚNG TRONG THƠ",
-                "Bài 5 : NHỮNG CÂU CHUYỆN HÀI",
-              ].map((chapter, index) => (
-                <div 
-                  key={index}
-                  className="p-4 bg-white border rounded-lg hover:border-pink-500 cursor-pointer flex items-center"
+              {lessons.map((lesson) => (
+                <Link 
+                  key={lesson.id}
+                  href={`/video/${lesson.id}`}
+                  className="block p-4 bg-white border rounded-lg hover:border-pink-500 cursor-pointer flex items-center transition-colors duration-300"
                 >
-                  <span className="mr-2 text-pink-600">+</span>
-                  <h3 className="font-medium text-gray-900">{chapter}</h3>
-                </div>
+                  <PlayCircleIcon className="h-5 w-5 text-pink-600 mr-3" />
+                  <div>
+                    <h3 className="font-medium text-gray-900">{lesson.title}</h3>
+                    <p className="text-sm text-gray-500 mt-1">{lesson.duration}</p>
+                  </div>
+                </Link>
               ))}
             </div>
           </div>

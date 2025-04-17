@@ -1,3 +1,25 @@
+'use client';
+
+import { DocumentTextIcon } from '@heroicons/react/24/outline';
+import Link from 'next/link';
+
+const exercises = [
+  {
+    id: "1",
+    title: "Bài 1 : CÂU CHUYỆN CỦA LỊCH SỬ",
+    description: "Bài tập trắc nghiệm về các tác phẩm văn học hiện đại",
+    totalQuestions: 3,
+    duration: "15 phút"
+  },
+  {
+    id: "2",
+    title: "Bài 2 : VẺ ĐẸP CỔ ĐIỂN",
+    description: "Bài tập trắc nghiệm về thơ ca cổ điển",
+    totalQuestions: 2,
+    duration: "10 phút"
+  }
+];
+
 export default function ExercisesPage() {
   return (
     <div className="space-y-8">
@@ -8,26 +30,32 @@ export default function ExercisesPage() {
 
       {/* Exercise List */}
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-        {[1, 2, 3, 4, 5, 6].map((exercise) => (
-          <div key={exercise} className="bg-pink-50 rounded-lg shadow hover:shadow-md transition-shadow">
+        {exercises.map((exercises) => (
+          <Link
+            key={exercises.id}
+            href={`/exercises/${exercises.id}`}
+            className="block bg-pink-50 rounded-lg shadow hover:shadow-md transition-shadow"
+          >
             <div className="p-6">
               <div className="flex items-start justify-between">
                 <div>
-                  <h3 className="text-lg font-medium text-gray-900">Bài tập {exercise}</h3>
-                  <p className="mt-1 text-sm text-gray-500">Bài tập về ...</p>
+                  <h3 className="text-lg font-medium text-gray-900">{exercises.title}</h3>
+                  <p className="mt-1 text-sm text-gray-500">{exercises.description}</p>
                 </div>
                 <span className="px-3 py-1 text-xs font-medium text-pink-700 bg-pink-100 rounded-full">
-                  15 câu hỏi
+                  {exercises.totalQuestions} câu hỏi
                 </span>
               </div>
               
-              <div className="mt-6 flex justify-end">
-                <button className="px-4 py-2 text-sm font-medium text-pink-600 hover:text-pink-700">
-                  Làm bài →
-                </button>
+              <div className="mt-6 flex justify-between items-center">
+                <span className="text-sm text-gray-500">{exercises.duration}</span>
+                <div className="flex items-center text-pink-600 hover:text-pink-700">
+                  <span className="text-sm font-medium">Làm bài</span>
+                  <DocumentTextIcon className="h-5 w-5 ml-1" />
+                </div>
               </div>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </div>
